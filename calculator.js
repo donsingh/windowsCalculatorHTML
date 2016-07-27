@@ -1,5 +1,5 @@
 var operate;
-
+var fields = {'target','preview','operation'};
 function addButton(num)
 {
 	var init = document.getElementById("target").innerHTML;
@@ -45,4 +45,9 @@ function calc()
 		document.getElementById("preview").innerHTML = "";
 		document.getElementById("operation").innerHTML = "";
 	}
+}
+
+function clearAll()
+{
+	
 }
