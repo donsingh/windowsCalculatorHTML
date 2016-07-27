@@ -49,5 +49,7 @@ function calc()
 
 function clearAll()
 {
-	
+		for(var i in fields){
+			document.getElementById(i).innerHTML = "";
+		}
 }
