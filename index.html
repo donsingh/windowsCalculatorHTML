@@ -1,10 +1,14 @@
 <html>
-<style>
-
-</style>
+<link rel='stylesheet' href='style.css'>
 <body>
 <div class="main">
 	<div class="screen">
+		<div class="top">
+			<span id="preview"></span>&nbsp;&nbsp;<span id="operation"></span>
+		</div>
+		<div class="bottom" id="target">
+		0
+		</div>
 	</div>
 	<div class="work">
 		<div class="row row1">
@@ -15,32 +19,88 @@
 			<button>M-</button>
 		</div>
 		<div class="row row1">
-			<button>7</button>
-			<button>8</button>
-			<button>9</button>
-			<button>/</button>
+			<button><-</button>
+			<button>CE</button>
+			<button>C</button>
+			<button>&#177;</button>
 			<button>&radic;</button>
 		</div>
 		<div class="row row1">
-			<button>4</button>
-			<button>5</button>
-			<button>6</button>
-			<button>*</button>
-			<button>M-</button>
+			<button onClick="addButton(7);">7</button>
+			<button onClick="addButton(8);">8</button>
+			<button onClick="addButton(9);">9</button>
+			<button onClick="addOp(4);">/</button>
+			<button>%</button>
 		</div>
 		<div class="row row1">
-			<button>1</button>
-			<button>2</button>
-			<button>3</button>
-			<button>-</button>
-			<button class="eq">=</button>
+			<button onClick="addButton(4);">4</button>
+			<button onClick="addButton(5);">5</button>
+			<button onClick="addButton(6);">6</button>
+			<button onClick="addOp(3);">*</button>
+			<button onClick="addButton(7);">1<em>/x</em></button>
+		</div>
+		<div class="row row1">
+			<button onClick="addButton(1);">1</button>
+			<button onClick="addButton(2);">2</button>
+			<button onClick="addButton(3);">3</button>
+			<button onClick="addOp(2);">-</button>
+			<button class="eq" onClick="calc();">=</button>
 		</div>
 		<div class="row row1">
 			<button class="zero">0</button>
-			<button>.</button>
-			<button>+</button>
+			<button onClick="addButton('.');">.</button>
+			<button onClick="addOp(1);">+</button>
 		</div>
 	</div>
 </div>
 </body>
 </html>
+<script>
+var operate;
+function addButton(num)
+{
+	var init = document.getElementById("target").innerHTML;
+	if(parseFloat(init)==0){
+		document.getElementById("target").innerHTML = num;
+	}else{
+		document.getElementById("target").innerHTML += num;
+	}
+	
+}
+function addOp(op)
+{
+	var left = document.getElementById("target").innerHTML;
+	left = parseFloat(left);
+	document.getElementById("target").innerHTML="";
+	document.getElementById("preview").innerHTML=left;
+	var sym;
+	switch(op){
+		case 1:	sym = "+";	break;
+		case 2:	sym = "-";	break;
+		case 3:	sym = "x";	break;
+		case 4:	sym = "&#247;";	break;
+		default:break;
+	}
+	document.getElementById("operation").innerHTML= sym;
+	operate = op;
+}
+function calc()
+{
+	var a = parseFloat(document.getElementById("preview").innerHTML);
+	var b = parseFloat(document.getElementById("target").innerHTML);
+	var ans;
+	var op;
+	if(!isNaN(a) && !isNaN(b)){
+		switch(operate){
+			case 1:	ans = a+b; break;
+			case 2:	ans = a-b; break;
+			case 3:	ans = a*b; break;
+			case 4:	ans = a/b; break;
+			default:break;
+		}
+		document.getElementById("target").innerHTML = ans;
+		document.getElementById("preview").innerHTML = "";
+		document.getElementById("operation").innerHTML = "";
+	}
+}
+</script>
