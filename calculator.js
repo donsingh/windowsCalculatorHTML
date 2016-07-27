@@ -1,19 +1,6 @@
-.main{
-	border:1px solid black;
-	width:208px;
-	height: 325px;
-	padding: 15px;
-  margin:3% auto;
-}
-.screen{
-	border:1px solid black;
-	width:185px;
-	height: 40px;
-	padding:10px;
-}
-.row{
-	margin-top:7px;
-}var operate;
+var operate;
+var main = document.getElementById("target");
+var operation = document.getElementById("operation");
 function addButton(num)
 {
 	var init = document.getElementById("target").innerHTML;
@@ -40,6 +27,7 @@ function addOp(op)
 	}
 	document.getElementById("operation").innerHTML= sym;
 	operate = op;
+	alert(main.innerHTML);
 }
 function calc()
 {
@@ -59,38 +47,4 @@ function calc()
 		document.getElementById("preview").innerHTML = "";
 		document.getElementById("operation").innerHTML = "";
 	}
-}
-button{
-	width:37px;
-	height:36px;
-  padding:0px;
-	font-size:0.6em;
-	font-family:Helvetica;
-}
-.zero{
-	width: 80px;
-}
-.eq{
-	height: 79px;
-	position:absolute;
-	margin-left:6px;
-	font-size:1.3em;
-}
-.top{
-	text-align:right;
-	width:100%;
-	height:40%;
-	font-family:Helvetica;
-	font-size:0.8em;
-}
-.bottom{
-	text-align:right;
-	width:100%;
-	height:60%;
-	font-family:Helvetica;
-	font-size:1.2em;
-	margin-top:10px;
-}
-#operation{
-	font-weight:bold;
 }
