@@ -1,6 +1,5 @@
 var operate;
-var main = document.getElementById("target");
-var operation = document.getElementById("operation");
+
 function addButton(num)
 {
 	var init = document.getElementById("target").innerHTML;
@@ -27,7 +26,6 @@ function addOp(op)
 	}
 	document.getElementById("operation").innerHTML= sym;
 	operate = op;
-	alert(main.innerHTML);
 }
 function calc()
 {
