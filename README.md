@@ -4,7 +4,7 @@
 
 ###This project outputs a simple HTML/CSS Generated Calculator:
 
-![alt tag](https://raw.githubusercontent.com/donsingh/windowsCalculatorHTML/master/img/preview.JPG)
+![alt tag](https://github.com/donsingh/windowsCalculatorHTML/master/img/preview.JPG)
 
 To Make Pull Request (make me see your code edits):
 >[GitHub - How to Make a Pull Request](https://help.github.com/articles/creating-a-pull-request/)
