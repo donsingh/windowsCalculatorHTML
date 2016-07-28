@@ -54,3 +54,4 @@ function clearAll()
 		}
 		document.getElementById("target").innerHTML = 0;
 }
+//his sir!
