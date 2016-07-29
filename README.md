@@ -1,8 +1,9 @@
 # windowsCalculatorHTML
-##A mimic of the windows calculator built in HTML/CSS 
-###Built for University of San Carlos IT 2103 Classes
+A mimic of the windows calculator built in HTML/CSS 
+Built for University of San Carlos IT 2103 Classes
 
-###This project outputs a simple HTML/CSS Generated Calculator:
+##Output
+This project outputs a simple HTML/CSS Generated Calculator:
 
 ![alt tag](img/screen.jpg)
 
